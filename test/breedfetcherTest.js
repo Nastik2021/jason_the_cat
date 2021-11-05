@@ -15,5 +15,14 @@ describe('fetchBreedDescription', () => {
       done();
     });
   });
-});
 
+
+  it('returns an error message with why description was not found, via callback', (done) => {
+    fetchBreedDescription('husky', (err) => {
+
+      assert.equal(err, 'Failed to find breed husky');
+
+      done();
+    });
+  });
+});
